@@ -38,8 +38,6 @@ const Breadcrumbs = () => {
           <BC
             crumbs={crumbs3}
             crumbsProps={{ className: "flex space-x-1 pr-2" }}
-            seperatorProps={{ className: "text-red-700" }}
-            iconProps={{ className: "text-red-700" }}
           />
         </div>
 

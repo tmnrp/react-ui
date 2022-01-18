@@ -29,7 +29,7 @@ export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
         style={{ display: "flex", ...style }}
         {...props}
       >
-        {crumbs?.map(({ className, icon, label, ...props }, i) => {
+        {crumbs?.map(({ className = "", icon, label, ...props }, i) => {
           return (
             <div
               key={i}
@@ -54,7 +54,7 @@ interface ISeperator
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {}
-const Seperator = ({ children, className, ...props }: ISeperator) => {
+const Seperator = ({ children, className = "", ...props }: ISeperator) => {
   return (
     <div className={`flex items-center ${className}`} {...props}>
       {children}
@@ -68,7 +68,7 @@ interface IIcon
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {}
-const Icon = ({ children, className, ...props }: IIcon) => (
+const Icon = ({ children, className = "", ...props }: IIcon) => (
   <div className={`flex items-center ${className}`} {...props}>
     {children}
   </div>
@@ -80,7 +80,7 @@ interface ILabel
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {}
-const Label = ({ children, className, ...props }: ILabel) => (
+const Label = ({ children, className = "", ...props }: ILabel) => (
   <div className={`flex items-center ${className}`} {...props}>
     {children}
   </div>
