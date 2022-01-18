@@ -16,7 +16,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       `}
     >
       <Header
-        className={`sticky top-0 z-10 flex justify-between py-4 pl-4 pr-2 shadow-default`}
+        className={`sticky top-0 z-10 flex justify-between py-4 pl-4 pr-2 border-b dark:border-gray-700`}
       />
 
       <section className="flex flex-1 overflow-auto">

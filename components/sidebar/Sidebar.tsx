@@ -8,7 +8,7 @@ export const Aside = ({ className }: { className?: string }) => {
   //
 
   //
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(true);
 
   //
   return (
@@ -41,7 +41,7 @@ const SidebarExpander = ({
   return (
     <li
       className={`
-        sidebar__expander
+        sidebar__expander h-10
         pl-2 flex items-center space-x-3.5 text-lg font-bold tracking-widest uppercase cursor-pointer
         border-b dark:border-secondary-dark
       `}

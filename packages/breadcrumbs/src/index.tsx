@@ -7,8 +7,8 @@ export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
   (
     {
       className = "",
-      seperator = "/",
       style,
+      seperator = "/",
       crumbsProps,
       seperatorProps,
       iconProps,
@@ -33,19 +33,57 @@ export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
           return (
             <div
               key={i}
-              className={`crumb flex ${className || ""}`}
+              className={`crumb flex ${className}`}
               {...crumbsProps}
               {...props}
             >
-              <div {...seperatorProps}>{seperator}</div>
-              <div {...iconProps}>{icon}</div>
-              <div {...labelProps}>{label}</div>
+              <Seperator {...seperatorProps}>{seperator}</Seperator>
+              {icon && <Icon {...iconProps}>{icon}</Icon>}
+              {label && <Label {...labelProps}>{label}</Label>}
             </div>
           );
         })}
       </div>
     );
   }
+);
+
+//
+interface ISeperator
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {}
+const Seperator = ({ children, className, ...props }: ISeperator) => {
+  return (
+    <div className={`flex items-center ${className}`} {...props}>
+      {children}
+    </div>
+  );
+};
+
+//
+interface IIcon
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {}
+const Icon = ({ children, className, ...props }: IIcon) => (
+  <div className={`flex items-center ${className}`} {...props}>
+    {children}
+  </div>
+);
+
+//
+interface ILabel
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {}
+const Label = ({ children, className, ...props }: ILabel) => (
+  <div className={`flex items-center ${className}`} {...props}>
+    {children}
+  </div>
 );
 
 //
@@ -71,8 +109,8 @@ export interface ICrumb
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  icon: React.ReactNode;
-  label: React.ReactNode;
+  icon?: React.ReactNode;
+  label?: React.ReactNode;
 }
 
 //

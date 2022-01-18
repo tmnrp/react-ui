@@ -30,28 +30,28 @@ export default MyApp;
 //
 export const sidebarContents: Array<ISidebarMenu> = [
   {
-    iconName: "view_module",
-    title: "Buttons",
-
-    items: [
-      {
-        title: "Example 1",
-        iconName: "face",
-        itemKey: CONST_PAGES.BUTTONS.KEY,
-        pathname: CONST_PAGES.BUTTONS.PATH,
-      },
-    ],
-  },
-  {
-    iconName: "view_module",
+    iconName: "double_arrow",
     title: "Breadcrumbs",
 
     items: [
       {
-        title: "Example 1",
-        iconName: "face",
+        title: "Examples",
+        iconName: "view_list",
         itemKey: CONST_PAGES.BREADCRUMBS.KEY,
         pathname: CONST_PAGES.BREADCRUMBS.PATH,
+      },
+    ],
+  },
+  {
+    iconName: "smart_button",
+    title: "Buttons",
+
+    items: [
+      {
+        title: "Examples",
+        iconName: "view_list",
+        itemKey: CONST_PAGES.BUTTONS.KEY,
+        pathname: CONST_PAGES.BUTTONS.PATH,
       },
     ],
   },

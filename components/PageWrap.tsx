@@ -53,14 +53,13 @@ const PageHeader = ({ className, actions, ...props }: IPageHeader) => {
   //
   return (
     <div
-      className={`flex items-center justify-between py-1 pl-4 pr-2 border-b pagewrap-header dark:border-gray-700 ${className}`}
+      className={`h-10 flex items-center justify-between py-1 pl-4 pr-2 border-b pagewrap-header dark:border-gray-700 ${className}`}
       {...props}
     >
       <Breadcrumbs
         ref={breadcrumbRef}
         crumbs={[]}
-        seperator="/"
-        labelProps={{}}
+        crumbsProps={{ className: "flex space-x-1 pr-4" }}
       />
       {actions}
     </div>

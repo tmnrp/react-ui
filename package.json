@@ -8,7 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tmnrp/react-breadcrumbs": "^1.0.0",
+    "@tmnrp/react-breadcrumbs": "^1.0.25",
     "@tmnrp/react-material-icons": "^0.1.2",
     "next": "12.0.8",
     "react": "17.0.2",

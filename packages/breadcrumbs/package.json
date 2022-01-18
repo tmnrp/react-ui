@@ -1,6 +1,6 @@
 {
   "name": "@tmnrp/react-breadcrumbs",
-  "version": "1.0.6",
+  "version": "1.0.25",
   "description": "Breadcrumbs is a component that can be used to display location of current route. Configurable icon, text and seperator as per need",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,7 +10,7 @@
   "author": "TMRNP <harsh.harish1@gmail.com> (https://tmnrp-portfolio.vercel.app/)",
   "license": "MIT",
   "homepage": "https://tmnrp-react-ui.vercel.app/",
-  "readme": "https://github.com/tmnrp/react-ui/blob/master/packages/breadcrumbs/readme.md",
+  "readme": "https://github.com/tmnrp/react-ui/tree/master/packages/breadcrumbs#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/tmnrp/react-ui.git",
