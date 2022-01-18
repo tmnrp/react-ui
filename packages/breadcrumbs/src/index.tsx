@@ -4,7 +4,19 @@ import { useState } from "react";
 import { useImperativeHandle } from "react";
 
 export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
-  ({ className = "", seperator = "/", style, crumbProps, ...props }, ref) => {
+  (
+    {
+      className = "",
+      seperator = "/",
+      style,
+      crumbsProps,
+      seperatorProps,
+      iconProps,
+      labelProps,
+      ...props
+    },
+    ref
+  ) => {
     const [crumbs, setCrumbs] = useState<Array<ICrumb>>(props.crumbs);
     useImperativeHandle(ref, () => ({
       setCrumbs: setCrumbs,
@@ -17,22 +29,20 @@ export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
         style={{ display: "flex", ...style }}
         {...props}
       >
-        {crumbs?.map(
-          ({ className, disableSeparator, icon, text, ...props }, i) => {
-            return (
-              <div
-                key={i}
-                className={`crumb ${className || ""}`}
-                {...crumbProps}
-                {...props}
-              >
-                {disableSeparator !== true && seperator}
-                {icon}
-                {text}
-              </div>
-            );
-          }
-        )}
+        {crumbs?.map(({ className, icon, label, ...props }, i) => {
+          return (
+            <div
+              key={i}
+              className={`crumb flex ${className || ""}`}
+              {...crumbsProps}
+              {...props}
+            >
+              <div {...seperatorProps}>{seperator}</div>
+              <div {...iconProps}>{icon}</div>
+              <div {...labelProps}>{label}</div>
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -61,9 +71,8 @@ export interface ICrumb
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  disableSeparator?: boolean;
   icon: React.ReactNode;
-  text: React.ReactNode;
+  label: React.ReactNode;
 }
 
 //
@@ -72,9 +81,21 @@ export interface IBreadcrumbs
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  crumbs: Array<ICrumb>;
   seperator?: React.ReactNode;
-  crumbProps?: React.DetailedHTMLProps<
+  seperatorProps?: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >;
+  crumbs: Array<ICrumb>;
+  crumbsProps?: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >;
+  iconProps?: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >;
+  labelProps?: React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   >;

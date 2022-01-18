@@ -1,20 +1,29 @@
 {
   "name": "@tmnrp/react-breadcrumbs",
-  "version": "1.0.3",
-  "description": "",
+  "version": "1.0.6",
+  "description": "Breadcrumbs is a component that can be used to display location of current route. Configurable icon, text and seperator as per need",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
+  "author": "TMRNP <harsh.harish1@gmail.com> (https://tmnrp-portfolio.vercel.app/)",
+  "license": "MIT",
+  "homepage": "https://tmnrp-react-ui.vercel.app/",
+  "readme": "https://github.com/tmnrp/react-ui/blob/master/packages/breadcrumbs/readme.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmnrp/react-ui.git",
+    "directory": "packages/breadcrumbs"
+  },
   "scripts": {
     "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
-    "build:pub": "npm run build && npm publish"
+    "build:pub:patch": "npm run build && npm version patch &&npm publish",
+    "build:pub:minor": "npm run build && npm version minor &&npm publish",
+    "build:pub:major": "npm run build && npm version major &&npm publish"
   },
-  "author": "TMNRP",
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.9",
     "@types/react": "^17.0.38",
@@ -26,5 +35,16 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  }
+  },
+  "keywords": [
+    "react",
+    "component",
+    "react-component",
+    "components",
+    "ui",
+    "breadcrumbs",
+    "crumbs",
+    "navigation path",
+    "nav address"
+  ]
 }

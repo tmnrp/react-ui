@@ -1,30 +1,49 @@
-import { ICrumb, useBreadcrumbs } from "@tmnrp/react-breadcrumbs";
-import { useContext } from "react";
+import {
+  ICrumb,
+  useBreadcrumbs,
+  Breadcrumbs as BC,
+  IBreadcrumbsMethods,
+} from "@tmnrp/react-breadcrumbs";
+import { useContext, useRef } from "react";
 import { PageWrap } from "../../components/PageWrap";
 import { GlobalContext } from "../../contexts/GlobalContext";
 
+//
 const Breadcrumbs = () => {
   const { breadcrumbRef } = useContext(GlobalContext);
   useBreadcrumbs?.({ ref: breadcrumbRef, crumbs: crumbs });
 
   //
-  return <PageWrap className="px-2">Welcome</PageWrap>;
-};
+  const sampleBCRef = useRef<IBreadcrumbsMethods>(null);
 
+  //
+  return (
+    <PageWrap className="px-2" headerProps={{ className: "hidden" }}>
+      <div className="flex items-center justify-center w-full h-full">
+        <BC
+          ref={sampleBCRef}
+          crumbs={crumbs}
+          crumbsProps={{ className: "flex space-x-1 pr-2" }}
+          seperator="/"
+          labelProps={{}}
+        />
+      </div>
+    </PageWrap>
+  );
+};
 export default Breadcrumbs;
 
 const crumbs: Array<ICrumb> = [
   {
     icon: "",
-    text: "Home",
-    disableSeparator: true,
+    label: "Home",
   },
   {
     icon: "",
-    text: "Breadcrumbs",
+    label: "Breadcrumbs",
   },
   {
     icon: "",
-    text: "Example 1",
+    label: "Example 1",
   },
 ];
