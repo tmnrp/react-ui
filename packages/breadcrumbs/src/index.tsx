@@ -9,7 +9,7 @@ export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
       className = "",
       style,
       seperator = "/",
-      crumbsProps,
+      crumbsProps = {},
       seperatorProps,
       iconProps,
       labelProps,
@@ -21,6 +21,7 @@ export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
     useImperativeHandle(ref, () => ({
       setCrumbs: setCrumbs,
     }));
+    const { className: crumbsPropsClassName, ...crumbsPropsRest } = crumbsProps;
 
     //
     return (
@@ -33,8 +34,8 @@ export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
           return (
             <div
               key={i}
-              className={`crumb flex ${className}`}
-              {...crumbsProps}
+              className={`crumb flex ${crumbsPropsClassName} ${className}`}
+              {...crumbsPropsRest}
               {...props}
             >
               <Seperator {...seperatorProps}>{seperator}</Seperator>

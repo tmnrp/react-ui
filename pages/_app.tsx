@@ -42,17 +42,17 @@ export const sidebarContents: Array<ISidebarMenu> = [
       },
     ],
   },
-  {
-    iconName: "smart_button",
-    title: "Buttons",
+  // {
+  //   iconName: "smart_button",
+  //   title: "Buttons",
 
-    items: [
-      {
-        title: "Examples",
-        iconName: "view_list",
-        itemKey: CONST_PAGES.BUTTONS.KEY,
-        pathname: CONST_PAGES.BUTTONS.PATH,
-      },
-    ],
-  },
+  //   items: [
+  //     {
+  //       title: "Examples",
+  //       iconName: "view_list",
+  //       itemKey: CONST_PAGES.BUTTONS.KEY,
+  //       pathname: CONST_PAGES.BUTTONS.PATH,
+  //     },
+  //   ],
+  // },
 ];
