@@ -20,42 +20,47 @@ const Breadcrumbs = () => {
   return (
     <PageWrap className="px-2">
       <div className="w-full space-y-4">
-        <div className="flex justify-between pb-2 border-b dark:border-b-gray-800">
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
           <div>Only labels :</div>
           <BC
             crumbs={crumbs1}
+            className="flex flex-wrap"
             crumbsProps={{ className: "flex space-x-1 pr-2" }}
           />
         </div>
 
-        <div className="flex justify-between pb-2 border-b dark:border-b-gray-800">
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
           <div>Only icons :</div>
           <BC
             crumbs={crumbs2}
+            className="flex flex-wrap"
             crumbsProps={{ className: "flex space-x-1 pr-2" }}
           />
         </div>
 
-        <div className="flex justify-between pb-2 border-b dark:border-b-gray-800">
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
           <div>Both icons and labels :</div>
           <BC
             crumbs={crumbs3}
+            className="flex flex-wrap"
             crumbsProps={{ className: "flex space-x-1 pr-2" }}
           />
         </div>
 
-        <div className="flex justify-between pb-2 border-b dark:border-b-gray-800">
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
           <div>Mix and match :</div>
           <BC
             crumbs={crumbs4}
+            className="flex flex-wrap"
             crumbsProps={{ className: "flex space-x-1 pr-2" }}
           />
         </div>
 
-        <div className="flex justify-between pb-2 border-b dark:border-b-gray-800">
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
           <div>Clickable navigation links :</div>
           <BC
             crumbs={getCrumbs5(router)}
+            className="flex flex-wrap"
             crumbsProps={{ className: "flex space-x-1 pr-2" }}
           />
         </div>

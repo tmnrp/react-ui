@@ -24,10 +24,10 @@ $ npm i @tmnrp/react-breadcrumbs
 
 | Properties     | type            | Description                                                            |
 | -------------- | --------------- | ---------------------------------------------------------------------- |
-| seperator      | React.ReactNode | Separator content.                                                     |
-| seperatorProps | React.ReactNode | Common HTML div properties that needs to be applied on all seperators. |
 | crumbs         | Array<ICrumb>   | Array of the crumbs, that will be displayed in the component.          |
 | crumbProps     | HTML div props  | Common HTML div properties that needs to be applied on all crumbs.     |
+| seperator      | React.ReactNode | Separator content.                                                     |
+| seperatorProps | React.ReactNode | Common HTML div properties that needs to be applied on all seperators. |
 | iconProps      | HTML div props  | Common HTML div properties that needs to be applied on all icons.      |
 | labelProps     | HTML div props  | Common HTML div properties that needs to be applied on all labels.     |
 
@@ -50,13 +50,50 @@ const App = () => {
   //
   return (
     <div className="flex items-center justify-center w-full h-full">
-      <Breadcrumbs
-        ref={breadcrumbRef}
-        crumbs={crumbs}
-        crumbsProps={{ className: "flex space-x-1 pr-2" }}
-        seperator="/"
-        labelProps={{}}
-      />
+      <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
+        <div>Only labels :</div>
+          <Breadcrumbs
+            crumbs={crumbs1}
+            className="flex flex-wrap"
+            crumbsProps={{ className: "flex space-x-1 pr-2" }}
+          />
+        </div>
+
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
+          <div>Only icons :</div>
+          <Breadcrumbs
+            crumbs={crumbs2}
+            className="flex flex-wrap"
+            crumbsProps={{ className: "flex space-x-1 pr-2" }}
+          />
+        </div>
+
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
+          <div>Both icons and labels :</div>
+          <Breadcrumbs
+            crumbs={crumbs3}
+            className="flex flex-wrap"
+            crumbsProps={{ className: "flex space-x-1 pr-2" }}
+          />
+        </div>
+
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
+          <div>Mix and match :</div>
+          <Breadcrumbs
+            crumbs={crumbs4}
+            className="flex flex-wrap"
+            crumbsProps={{ className: "flex space-x-1 pr-2" }}
+          />
+        </div>
+
+        <div className="flex flex-wrap justify-between pb-2 border-b dark:border-b-gray-800">
+          <div>Clickable navigation links :</div>
+          <BC
+            crumbs={getCrumbs5(router)}
+            className="flex flex-wrap"
+            crumbsProps={{ className: "flex space-x-1 pr-2" }}
+          />
+        </div>
     </div>
   );
 };
