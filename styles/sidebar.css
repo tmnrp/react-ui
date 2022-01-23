@@ -4,7 +4,7 @@ aside {
 }
 
 aside.expanded {
-  @apply w-56;
+  @apply w-72;
 }
 
 aside .sidebar__expander p,

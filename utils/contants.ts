@@ -26,6 +26,10 @@ export const CONST_PAGES = {
     KEY: "/breadcrumbs",
     PATH: "/breadcrumbs",
   },
+  GOOGLE_MATERIAL_ICONS: {
+    KEY: "/google-material-icons",
+    PATH: "/google-material-icons",
+  },
   BUTTONS: {
     KEY: "/buttons",
     PATH: "/buttons",

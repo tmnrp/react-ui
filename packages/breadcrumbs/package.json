@@ -9,7 +9,7 @@
   ],
   "author": "TMRNP <harsh.harish1@gmail.com> (https://tmnrp-portfolio.vercel.app/)",
   "license": "MIT",
-  "homepage": "https://tmnrp-react-ui.vercel.app/",
+  "homepage": "https://tmnrp-react-ui.vercel.app/breadcrumbs",
   "readme": "https://github.com/tmnrp/react-ui/tree/master/packages/breadcrumbs#readme",
   "repository": {
     "type": "git",
@@ -20,9 +20,9 @@
     "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
-    "build:pub:patch": "npm run build && npm version patch &&npm publish",
-    "build:pub:minor": "npm run build && npm version minor &&npm publish",
-    "build:pub:major": "npm run build && npm version major &&npm publish"
+    "build:pub:patch": "npm run build && npm version patch && npm publish --access public",
+    "build:pub:minor": "npm run build && npm version minor && npm publish --access public",
+    "build:pub:major": "npm run build && npm version major && npm publish --access public"
   },
   "devDependencies": {
     "@types/node": "^17.0.9",

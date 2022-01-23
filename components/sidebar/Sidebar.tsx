@@ -1,4 +1,4 @@
-import { ReactMaterialIcons } from "@tmnrp/react-material-icons";
+import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
 import { useRouter } from "next/router";
 import { Dispatch, SetStateAction, useState } from "react";
 import { sidebarContents } from "../../pages/_app";
@@ -47,7 +47,7 @@ const SidebarExpander = ({
       `}
       onClick={() => setIsExpanded((isExpanded) => !isExpanded)}
     >
-      <ReactMaterialIcons className="text-2xl" iconName={iconName} />
+      <GoogleMaterialIcons className="text-2xl" iconName={iconName} />
       <p>{title}</p>
     </li>
   );
@@ -62,7 +62,7 @@ const SidebarMenuHeader = ({ iconName, title }: ISidebarMenuHeader) => {
         flex items-center space-x-2 text-base font-semibold tracking-widest uppercase
       `}
     >
-      <ReactMaterialIcons className="text-2xl" iconName={iconName} />
+      <GoogleMaterialIcons className="text-2xl" iconName={iconName} />
       <p>{title}</p>
     </li>
   );
@@ -113,7 +113,7 @@ const SidebarMenuItem = ({
       `}
       onClick={() => router.push(pathname)}
     >
-      <ReactMaterialIcons className={`text-2xl`} iconName={iconName} />
+      <GoogleMaterialIcons className={`text-2xl`} iconName={iconName} />
       <p>{title}</p>
     </li>
   );

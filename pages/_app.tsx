@@ -42,6 +42,19 @@ export const sidebarContents: Array<ISidebarMenu> = [
       },
     ],
   },
+  {
+    iconName: "interests",
+    title: "Google material icons",
+
+    items: [
+      {
+        title: "Examples",
+        iconName: "view_list",
+        itemKey: CONST_PAGES.GOOGLE_MATERIAL_ICONS.KEY,
+        pathname: CONST_PAGES.GOOGLE_MATERIAL_ICONS.PATH,
+      },
+    ],
+  },
   // {
   //   iconName: "smart_button",
   //   title: "Buttons",

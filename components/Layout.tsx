@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { CONST_PAGES, CONST_CONFIG } from "../utils/contants";
-import { ReactMaterialIcons } from "@tmnrp/react-material-icons";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Aside } from "./sidebar/Sidebar";
+import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
 
 //
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -65,7 +65,7 @@ const Footer = ({ className }: { className: string }) => (
   <footer className={className}>
     <div className="flex space-x-3">
       <div className="flex space-x-2 cursor-pointer text-default-hover">
-        <ReactMaterialIcons iconName="email" />
+        <GoogleMaterialIcons iconName="email" />
         <div
           className="hidden md:block whitespace-nowrap"
           onClick={() => window.open("mailto:harsh.harish1@gmail.com")}
@@ -75,7 +75,7 @@ const Footer = ({ className }: { className: string }) => (
       </div>
 
       <div className="flex space-x-2 cursor-pointer text-default-hover">
-        <ReactMaterialIcons iconName="phone" />
+        <GoogleMaterialIcons iconName="phone" />
         <div
           className="hidden md:block whitespace-nowrap"
           onClick={() => window.open("tel:+917208463103")}
@@ -85,7 +85,7 @@ const Footer = ({ className }: { className: string }) => (
       </div>
 
       <div className="flex space-x-2 cursor-pointer text-default-hover">
-        <ReactMaterialIcons iconName="place" />
+        <GoogleMaterialIcons iconName="place" />
         <div
           className="hidden md:block whitespace-nowrap"
           onClick={() =>
@@ -98,7 +98,7 @@ const Footer = ({ className }: { className: string }) => (
     </div>
 
     <div className="flex space-x-3">
-      <ReactMaterialIcons
+      <GoogleMaterialIcons
         className="cursor-pointer text-default-hover"
         iconName="work"
         onClick={() =>
@@ -108,7 +108,7 @@ const Footer = ({ className }: { className: string }) => (
           )
         }
       />
-      <ReactMaterialIcons
+      <GoogleMaterialIcons
         className="cursor-pointer text-default-hover"
         iconName="developer_mode"
         onClick={() => window.open("https://github.com/tmnrp", "_blank")}

@@ -3,7 +3,7 @@ import {
   Breadcrumbs as BC,
   useBreadcrumbs,
 } from "@tmnrp/react-breadcrumbs";
-import { ReactMaterialIcons } from "@tmnrp/react-material-icons";
+import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
 import { NextRouter, useRouter } from "next/router";
 import { useContext } from "react";
 import { PageWrap } from "../../components/PageWrap";
@@ -72,15 +72,15 @@ export default Breadcrumbs;
 
 const crumbs: Array<ICrumb> = [
   {
-    icon: <ReactMaterialIcons iconName="home" />,
+    icon: <GoogleMaterialIcons iconName="home" />,
     label: "Home",
   },
   {
-    icon: <ReactMaterialIcons iconName="double_arrow" />,
+    icon: <GoogleMaterialIcons iconName="double_arrow" />,
     label: "Breadcrumbs",
   },
   {
-    icon: <ReactMaterialIcons iconName="view_list" />,
+    icon: <GoogleMaterialIcons iconName="view_list" />,
     label: "Example",
   },
 ];
@@ -100,36 +100,36 @@ const crumbs1: Array<ICrumb> = [
 
 const crumbs2: Array<ICrumb> = [
   {
-    icon: <ReactMaterialIcons iconName="home" />,
+    icon: <GoogleMaterialIcons iconName="home" />,
   },
   {
-    icon: <ReactMaterialIcons iconName="face" />,
+    icon: <GoogleMaterialIcons iconName="face" />,
   },
   {
-    icon: <ReactMaterialIcons iconName="add" />,
+    icon: <GoogleMaterialIcons iconName="add" />,
   },
 ];
 
 const crumbs3: Array<ICrumb> = [
   {
-    icon: <ReactMaterialIcons iconName="home" />,
+    icon: <GoogleMaterialIcons iconName="home" />,
     label: "Home",
   },
   {
-    icon: <ReactMaterialIcons iconName="double_arrow" />,
+    icon: <GoogleMaterialIcons iconName="double_arrow" />,
     label: "Breadcrumbs",
   },
   {
-    icon: <ReactMaterialIcons iconName="view_list" />,
+    icon: <GoogleMaterialIcons iconName="view_list" />,
     label: "Example",
   },
 ];
 const crumbs4: Array<ICrumb> = [
   {
-    icon: <ReactMaterialIcons iconName="home" />,
+    icon: <GoogleMaterialIcons iconName="home" />,
   },
   {
-    icon: <ReactMaterialIcons iconName="double_arrow" />,
+    icon: <GoogleMaterialIcons iconName="double_arrow" />,
   },
   {
     icon: "",
@@ -140,19 +140,19 @@ const crumbs4: Array<ICrumb> = [
 const getCrumbs5 = (router: NextRouter): Array<ICrumb> => {
   return [
     {
-      icon: <ReactMaterialIcons iconName="home" />,
+      icon: <GoogleMaterialIcons iconName="home" />,
       label: "Home",
       className: "hover:text-red-400 cursor-pointer",
       onClick: () => router.push(CONST_PAGES.LANDING.PATH),
     },
     {
-      icon: <ReactMaterialIcons iconName="double_arrow" />,
+      icon: <GoogleMaterialIcons iconName="double_arrow" />,
       label: "Breadcrumbs",
       className: "hover:text-emerald-400 cursor-pointer",
       onClick: () => router.push(CONST_PAGES.LANDING.PATH),
     },
     {
-      icon: <ReactMaterialIcons iconName="view_list" />,
+      icon: <GoogleMaterialIcons iconName="view_list" />,
       label: "Example",
       className: "hover:text-blue-400 cursor-pointer",
       onClick: () => router.push(CONST_PAGES.LANDING.PATH),
