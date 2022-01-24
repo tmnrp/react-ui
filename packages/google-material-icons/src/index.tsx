@@ -1,13 +1,14 @@
 import React from "react";
 
 export const GoogleMaterialIcons = ({
+  className = "",
   type,
   iconName,
   ...props
 }: IGoogleMaterialIcons) => {
   const iconType = type ? `-${type}` : "";
   return (
-    <span className={`material-icons${iconType}`} {...props}>
+    <span className={`material-icons${iconType} ${className}`} {...props}>
       {iconName}
     </span>
   );
