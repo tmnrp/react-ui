@@ -30,6 +30,10 @@ export const CONST_PAGES = {
     KEY: "/google-material-icons",
     PATH: "/google-material-icons",
   },
+  PROGRESSBAR: {
+    KEY: "/progressbar",
+    PATH: "/progressbar",
+  },
   BUTTONS: {
     KEY: "/buttons",
     PATH: "/buttons",

@@ -15,3 +15,7 @@ button {
 @import "./sidebar.css";
 @import "./texts.css";
 @import "./index.css";
+
+/*
+@import "~@tmnrp/react-sidebar/dist/esm/index.css";
+*/

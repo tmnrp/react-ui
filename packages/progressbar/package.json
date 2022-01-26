@@ -1,0 +1,49 @@
+{
+  "name": "@tmnrp/react-progressbar",
+  "version": "1.0.20",
+  "description": "React progressbar is a component that can be used to display progressbar menu.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "TMRNP <harsh.harish1@gmail.com> (https://tmnrp-portfolio.vercel.app/)",
+  "license": "MIT",
+  "homepage": "https://tmnrp-react-ui.vercel.app/progressbar",
+  "readme": "https://github.com/tmnrp/react-ui/tree/master/packages/progressbar#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmnrp/react-ui.git",
+    "directory": "packages/progressbar"
+  },
+  "scripts": {
+    "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "build:pub:patch": "npm run build && npm version patch && npm publish --access public",
+    "build:pub:minor": "npm run build && npm version minor && npm publish --access public",
+    "build:pub:major": "npm run build && npm version major && npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.9",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tsc-hooks": "^1.1.1",
+    "typescript": "^4.5.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "react-component",
+    "components",
+    "ui",
+    "progressbar",
+    "aside"
+  ]
+}

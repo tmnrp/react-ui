@@ -41,3 +41,6 @@ packages/breadcrumbs/dist
 
 packages/google-material-icons/node_modules
 packages/google-material-icons/dist
+
+packages/progressbar/node_modules
+packages/progressbar/dist

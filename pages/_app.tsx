@@ -55,6 +55,19 @@ export const sidebarContents: Array<ISidebarMenu> = [
       },
     ],
   },
+  {
+    iconName: "sync",
+    title: "Progressbar",
+
+    items: [
+      {
+        title: "Examples",
+        iconName: "view_list",
+        itemKey: CONST_PAGES.PROGRESSBAR.KEY,
+        pathname: CONST_PAGES.PROGRESSBAR.PATH,
+      },
+    ],
+  },
   // {
   //   iconName: "smart_button",
   //   title: "Buttons",
