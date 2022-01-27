@@ -13,44 +13,47 @@ export const Progressbar = forwardRef(
     }: IProgressbar,
     ref: Ref<IProgressbarMethods>
   ) => {
-    //
     const [width, setWidth] = useState<number>(0);
     const [intervalID, setIntervalID] = useState<number>();
 
     //
-    useImperativeHandle(ref, () => ({
-      //
-      activate: () => {
-        let w: number = 0;
-        const id = window.setInterval(() => {
-          if (w <= 80) {
-            w = w + 1;
-            setWidth(w);
-          } else {
-            clearInterval(id);
-          }
-        }, frequency);
-        setIntervalID(id);
-      },
+    useImperativeHandle(
+      ref,
+      () => ({
+        //
+        activate: () => {
+          const id = window.setInterval(() => {
+            setWidth((width) => {
+              width === 75 && clearInterval(id);
+              return ++width;
+            });
+          }, frequency);
+          setIntervalID(id);
+        },
 
-      //
-      kill: () => {
-        clearInterval(intervalID);
-        setWidth(100);
-      },
-    }));
+        //
+        kill: () => {
+          clearInterval(intervalID);
+          setWidth(100);
+          setTimeout(() => setWidth(0), 1000);
+        },
+      }),
+      [frequency, intervalID]
+    );
 
     //
     return (
       <div
-        key={width}
         className={`tm-progressbar ${className}`}
         style={{
-          height: `${height}px`,
+          transition: "1s width, 2s opacity",
+          opacity: `${width === 0 || width === 100 ? 0 : 1}`,
           width: `${width}%`,
-          transitionDelay: "5s",
-          transition: "opacity ease-in-out 2s",
-          opacity: width === 100 ? 0 : 1,
+          height: height,
+          position: "absolute",
+          top: "0px",
+          left: "0px",
+          zIndex: "10",
           ...style,
         }}
         {...props}

@@ -1,15 +1,15 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { CONST_CONFIG, CONST_THEME_MODES } from "../utils/contants";
 import { IBreadcrumbsMethods } from "@tmnrp/react-breadcrumbs";
+import { IProgressbarMethods } from "@tmnrp/react-progressbar";
 
 //
 export interface GlobalContextProps {
-  // progressbarLineRef?: React.RefObject<ReactProgressbarLineMethodProps>;
+  pbRef?: React.RefObject<IProgressbarMethods>;
   breadcrumbRef?: React.RefObject<IBreadcrumbsMethods>;
   themeMode: string;
   setThemeMode: React.Dispatch<React.SetStateAction<string>>;
   toggleThemeMode: () => void;
-  breakpoint: "sm" | "md" | "lg" | "xl" | "2xl";
 }
 
 //
@@ -17,7 +17,6 @@ export const GlobalContext = React.createContext<GlobalContextProps>({
   themeMode: CONST_CONFIG.THEME,
   setThemeMode: () => {},
   toggleThemeMode: () => {},
-  breakpoint: "sm",
 });
 
 //
@@ -25,7 +24,6 @@ export interface Props {
   children: React.ReactNode;
 }
 export const GlobalContextProvider = ({ children }: Props) => {
-  // const progressbarLineRef = useRef<ReactProgressbarLineMethodProps>(null);
   const breadcrumbRef = useRef<IBreadcrumbsMethods>(null);
   const [themeMode, setThemeMode] = useState(CONST_CONFIG.THEME);
   useEffect(() => {
@@ -46,48 +44,17 @@ export const GlobalContextProvider = ({ children }: Props) => {
   }, []);
 
   //
-  const [breakpoint, setBreakpoint] = useState<
-    "sm" | "md" | "lg" | "xl" | "2xl"
-  >("sm");
-  const breakPointHandler = useCallback(
-    (width) =>
-      setBreakpoint(
-        width < 768
-          ? "sm"
-          : width < 1024
-          ? "md"
-          : width < 1280
-          ? "lg"
-          : width < 1536
-          ? "xl"
-          : "2xl"
-      ),
-    []
-  );
-  useEffect(() => {
-    breakPointHandler(window.innerWidth);
-    window.addEventListener("resize", () =>
-      breakPointHandler(window.innerWidth)
-    );
-
-    //
-    return () => {
-      window.removeEventListener("resize", () =>
-        breakPointHandler(window.innerWidth)
-      );
-    };
-  }, [breakPointHandler]);
+  const pbRef = useRef<IProgressbarMethods>(null);
 
   //
   return (
     <GlobalContext.Provider
       value={{
-        // progressbarLineRef: progressbarLineRef,
+        pbRef: pbRef,
         breadcrumbRef: breadcrumbRef,
         themeMode: themeMode,
         setThemeMode: setThemeMode,
         toggleThemeMode: toggleThemeMode,
-        breakpoint: breakpoint,
       }}
     >
       {children}

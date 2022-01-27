@@ -1,33 +1,34 @@
 import { ICrumb, useBreadcrumbs } from "@tmnrp/react-breadcrumbs";
-import { useContext, useEffect, useRef } from "react";
+import { useContext } from "react";
 import { PageWrap } from "../../components/PageWrap";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
-import {
-  Progressbar as PB,
-  IProgressbarMethods,
-} from "@tmnrp/react-progressbar";
+import { Progressbar as PB } from "@tmnrp/react-progressbar";
 
 //
 const Progressbar = () => {
-  const { breadcrumbRef } = useContext(GlobalContext);
+  const { breadcrumbRef, pbRef } = useContext(GlobalContext);
   useBreadcrumbs?.({ ref: breadcrumbRef, crumbs: crumbs });
-
-  //
-  const pbRef = useRef<IProgressbarMethods>(null);
-  useEffect(() => {
-    pbRef.current?.activate();
-
-    //
-    setTimeout(() => {
-      pbRef.current?.kill();
-    }, 3000);
-  }, []);
 
   //
   return (
     <PageWrap className="px-2">
-      <PB className="bg-red-400" ref={pbRef} frequency={100} height={10} />
+      <PB className="bg-emerald-600 h-1" ref={pbRef} />
+      <button
+        onClick={() => {
+          pbRef?.current?.activate();
+        }}
+      >
+        Activate
+      </button>
+
+      <button
+        onClick={() => {
+          pbRef?.current?.kill();
+        }}
+      >
+        Kill
+      </button>
     </PageWrap>
   );
 };
