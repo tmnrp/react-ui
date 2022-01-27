@@ -46,7 +46,22 @@ const App = () => {
   //
   return (
     <div className="flex items-center justify-center w-full h-full">
-      <Progressbar className="bg-red-400" ref={pbRef} frequency={100} height={10} />
+      <Progressbar ref={pbRef} className="bg-red-400" frequency={100} height={10} />
+      <button
+        onClick={() => {
+          pbRef?.current?.activate();
+        }}
+      >
+        Activate
+      </button>
+
+      <button
+        onClick={() => {
+          pbRef?.current?.kill();
+        }}
+      >
+        Kill
+      </button>
     </div>
   );
 };
