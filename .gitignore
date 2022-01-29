@@ -44,3 +44,6 @@ packages/google-material-icons/dist
 
 packages/progressbar/node_modules
 packages/progressbar/dist
+
+packages/theme-switcher/node_modules
+packages/theme-switcher/dist

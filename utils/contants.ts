@@ -35,8 +35,8 @@ export const CONST_PAGES = {
     PATH: "/progressbar",
   },
   BUTTONS: {
-    KEY: "/buttons",
-    PATH: "/buttons",
+    KEY: "/theme-switcher",
+    PATH: "/theme-switcher",
   },
   // PERSONS: {
   //   KEY: "persons",
