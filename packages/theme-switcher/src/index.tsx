@@ -1,13 +1,28 @@
 /* eslint-disable react/display-name */
-import React, { forwardRef, Ref, useImperativeHandle, useState } from "react";
+import React, {
+  forwardRef,
+  Ref,
+  useEffect,
+  useImperativeHandle,
+  useState,
+} from "react";
 
 //
 export const ThemeSwitcher = forwardRef(
   (
-    { className = "", children, defaultTheme = "", ...props }: IThemeSwitcher,
+    {
+      className = "",
+      children,
+      defaultTheme = "",
+      onThemeChange,
+      ...props
+    }: IThemeSwitcher,
     ref: Ref<IThemeSwitcherMethods>
   ) => {
     const [theme, setTheme] = useState<string>(defaultTheme);
+
+    //
+    useEffect(() => onThemeChange?.(theme), [theme, onThemeChange]);
 
     //
     useImperativeHandle(
@@ -31,6 +46,7 @@ export const ThemeSwitcher = forwardRef(
 export interface IThemeSwitcher extends React.HTMLAttributes<HTMLElement> {
   defaultTheme?: string;
   children: (theme: string) => React.ReactNode;
+  onThemeChange?: (theme: string) => void;
 }
 
 //
