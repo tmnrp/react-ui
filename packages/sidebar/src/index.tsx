@@ -12,7 +12,7 @@ export const Sidebar = ({
   ...props
 }: ISidebar) => {
   return (
-    <div
+    <aside
       className={`
         overflow-hidden
         ${className}
@@ -25,11 +25,14 @@ export const Sidebar = ({
       {...props}
     >
       {children}
-    </div>
+    </aside>
   );
 };
 export interface ISidebar
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLElement>,
+    HTMLElement
+  > {
   isExpanded: boolean;
   isExpandedWidth?: string | number | undefined;
   isExpandedTransitionduration?: number;
@@ -45,13 +48,13 @@ export const SidebarToggler = ({
   ...props
 }: ISidebarToggler) => {
   return (
-    <div
+    <aside
       className={`cursor-pointer inline-flex justify-center items-center ${className}`}
       onClick={toggle}
       {...props}
     >
       {isExpanded ? isExpandedIcon : isCollapsedIcon}
-    </div>
+    </aside>
   );
 };
 export interface ISidebarToggler

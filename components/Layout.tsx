@@ -1,11 +1,13 @@
 import { useRouter } from "next/router";
 import { CONST_PAGES, CONST_CONFIG } from "../utils/contants";
 import { ThemeSwitcher } from "./ThemeSwitcher";
-import { Aside } from "./sidebar/Sidebar";
 import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
+import { useSidebar, SidebarToggler, Sidebar } from "@tmnrp/react-sidebar";
 
 //
 export const Layout = ({ children }: { children: React.ReactNode }) => {
+  const { isExpanded, toggle } = useSidebar();
+
   //
   return (
     <div
@@ -17,10 +19,12 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     >
       <Header
         className={`sticky top-0 z-10 flex justify-between py-4 pl-4 pr-2 border-b dark:border-gray-700`}
+        isExpanded={isExpanded}
+        toggle={toggle}
       />
 
       <section className="flex flex-1 overflow-auto">
-        <Aside className="flex flex-col overflow-x-hidden overflow-y-auto border-r dark:border-secondary-dark" />
+        <Sidebar isExpanded={isExpanded}>My sidebar</Sidebar>
         <main className="flex-1 overflow-hidden">{children}</main>
       </section>
 
@@ -30,9 +34,26 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 //
-const Header = ({ className }: { className: string }) => (
+const Header = ({
+  className,
+  isExpanded,
+  toggle,
+}: {
+  className: string;
+  isExpanded: boolean;
+  toggle: () => void;
+}) => (
   <header className={className}>
-    <Logo />
+    <div className="flex">
+      <SidebarToggler
+        className="pr-2"
+        toggle={toggle}
+        isExpanded={isExpanded}
+        isExpandedIcon={<GoogleMaterialIcons iconName="menu_open" />}
+        isCollapsedIcon={<GoogleMaterialIcons iconName="menu" />}
+      />
+      <Logo />
+    </div>
 
     <div className="flex">
       <ThemeSwitcher />

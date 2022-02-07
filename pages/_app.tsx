@@ -6,7 +6,8 @@ import { Layout } from "../components/Layout";
 import Head from "next/head";
 import { GlobalContextProvider } from "../contexts/GlobalContext";
 import { CONST_PAGES } from "../utils/contants";
-import { ISidebarMenu } from "../components/sidebar/Sidebar";
+import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
+import { IExplorerItem } from "./explorer-page";
 
 //
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -28,69 +29,82 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 export default MyApp;
 
 //
-export const sidebarContents: Array<ISidebarMenu> = [
+export const EXPLORER_CONTENT: Array<IExplorerItem> = [
   {
-    iconName: "double_arrow",
-    title: "Breadcrumbs",
+    icon: <GoogleMaterialIcons iconName="double_arrow" />,
+    label: "Breadcrumbs",
+    itemKey: CONST_PAGES.BREADCRUMBS.KEY,
 
     items: [
       {
-        title: "Examples",
-        iconName: "view_list",
+        label: "Example 1",
+        icon: <GoogleMaterialIcons iconName="view_list" />,
         itemKey: CONST_PAGES.BREADCRUMBS.KEY,
-        pathname: CONST_PAGES.BREADCRUMBS.PATH,
+      },
+      {
+        label: "Example 2",
+        icon: <GoogleMaterialIcons iconName="view_list" />,
+        itemKey: CONST_PAGES.BREADCRUMBS.KEY,
+      },
+      {
+        label: "Example 3",
+        icon: <GoogleMaterialIcons iconName="view_list" />,
+        itemKey: CONST_PAGES.BREADCRUMBS.KEY,
       },
     ],
   },
   {
-    iconName: "interests",
-    title: "Google material icons",
+    icon: <GoogleMaterialIcons iconName="interests" />,
+    label: "Google material icons",
+    itemKey: CONST_PAGES.GOOGLE_MATERIAL_ICONS.KEY,
 
     items: [
       {
-        title: "Examples",
-        iconName: "view_list",
+        label: "Examples",
+        icon: <GoogleMaterialIcons iconName="view_list" />,
         itemKey: CONST_PAGES.GOOGLE_MATERIAL_ICONS.KEY,
-        pathname: CONST_PAGES.GOOGLE_MATERIAL_ICONS.PATH,
+        onClick: () => {
+          alert("lolwa");
+        },
       },
     ],
   },
   {
-    iconName: "sync",
-    title: "Progressbar",
+    icon: <GoogleMaterialIcons iconName="sync" />,
+    label: "Progressbar",
+    itemKey: CONST_PAGES.PROGRESSBAR.KEY,
 
     items: [
       {
-        title: "Examples",
-        iconName: "view_list",
+        label: "Examples",
+        icon: <GoogleMaterialIcons iconName="view_list" />,
         itemKey: CONST_PAGES.PROGRESSBAR.KEY,
-        pathname: CONST_PAGES.PROGRESSBAR.PATH,
       },
     ],
   },
   {
-    iconName: "smart_button",
-    title: "Theme-switcher",
+    icon: <GoogleMaterialIcons iconName="smart_button" />,
+    label: "Theme-switcher",
+    itemKey: CONST_PAGES.BUTTONS.KEY,
 
     items: [
       {
-        title: "Examples",
-        iconName: "view_list",
+        label: "Examples",
+        icon: <GoogleMaterialIcons iconName="view_list" />,
         itemKey: CONST_PAGES.BUTTONS.KEY,
-        pathname: CONST_PAGES.BUTTONS.PATH,
       },
     ],
   },
   {
-    iconName: "smart_button",
-    title: "Sidebar",
+    icon: <GoogleMaterialIcons iconName="smart_button" />,
+    label: "Sidebar",
+    itemKey: CONST_PAGES.SIDEBAR.KEY,
 
     items: [
       {
-        title: "Examples",
-        iconName: "view_list",
+        label: "Examples",
+        icon: <GoogleMaterialIcons iconName="view_list" />,
         itemKey: CONST_PAGES.SIDEBAR.KEY,
-        pathname: CONST_PAGES.SIDEBAR.PATH,
       },
     ],
   },
