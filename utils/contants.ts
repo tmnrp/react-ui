@@ -38,6 +38,10 @@ export const CONST_PAGES = {
     KEY: "/theme-switcher",
     PATH: "/theme-switcher",
   },
+  SIDEBAR: {
+    KEY: "/sidebar-page",
+    PATH: "/sidebar-page",
+  },
   // PERSONS: {
   //   KEY: "persons",
   //   PATH: "/app/management/persons",

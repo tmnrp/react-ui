@@ -81,4 +81,17 @@ export const sidebarContents: Array<ISidebarMenu> = [
       },
     ],
   },
+  {
+    iconName: "smart_button",
+    title: "Sidebar",
+
+    items: [
+      {
+        title: "Examples",
+        iconName: "view_list",
+        itemKey: CONST_PAGES.SIDEBAR.KEY,
+        pathname: CONST_PAGES.SIDEBAR.PATH,
+      },
+    ],
+  },
 ];

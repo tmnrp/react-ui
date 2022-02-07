@@ -11,6 +11,7 @@
     "@tmnrp/react-breadcrumbs": "^1.0.26",
     "@tmnrp/react-google-material-icons": "^1.0.10",
     "@tmnrp/react-progressbar": "^1.0.23",
+    "@tmnrp/react-sidebar": "^1.0.5",
     "@tmnrp/react-theme-switcher": "^1.0.2",
     "next": "12.0.8",
     "react": "17.0.2",

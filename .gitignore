@@ -47,3 +47,6 @@ packages/progressbar/dist
 
 packages/theme-switcher/node_modules
 packages/theme-switcher/dist
+
+packages/sidebar/node_modules
+packages/sidebar/dist
