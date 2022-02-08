@@ -5,11 +5,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "reset-explorer": "npm uninstall @tmnrp/react-explorer && npm i @tmnrp/react-explorer && npm run dev"
   },
   "dependencies": {
     "@tmnrp/react-breadcrumbs": "^1.0.26",
-    "@tmnrp/react-explorer": "^1.0.1",
+    "@tmnrp/react-explorer": "^1.0.6",
     "@tmnrp/react-google-material-icons": "^1.0.10",
     "@tmnrp/react-progressbar": "^1.0.23",
     "@tmnrp/react-sidebar": "^1.0.7",

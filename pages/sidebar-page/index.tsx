@@ -49,8 +49,8 @@ const crumbs: Array<ICrumb> = [
     label: "Home",
   },
   {
-    icon: <GoogleMaterialIcons iconName="double_arrow" />,
-    label: "Progressbar",
+    icon: <GoogleMaterialIcons iconName="view_sidebar" />,
+    label: "Sidebar",
   },
   {
     icon: <GoogleMaterialIcons iconName="view_list" />,

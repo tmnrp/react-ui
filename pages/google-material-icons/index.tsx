@@ -49,7 +49,7 @@ const crumbs: Array<ICrumb> = [
     label: "Home",
   },
   {
-    icon: <GoogleMaterialIcons iconName="double_arrow" />,
+    icon: <GoogleMaterialIcons iconName="interests" />,
     label: "Google material icons",
   },
   {

@@ -1,4 +1,4 @@
-import { useBreadcrumbs } from "@tmnrp/react-breadcrumbs";
+import { ICrumb, useBreadcrumbs } from "@tmnrp/react-breadcrumbs";
 import { useContext, useRef } from "react";
 import { PageWrap } from "../../components/PageWrap";
 import { GlobalContext } from "../../contexts/GlobalContext";
@@ -51,11 +51,18 @@ const ThemeSwitcher = () => {
 export default ThemeSwitcher;
 
 //
-const crumbs = [
+
+const crumbs: Array<ICrumb> = [
   {
-    label: "Theme switcher",
+    icon: <GoogleMaterialIcons iconName="home" />,
+    label: "Home",
   },
   {
-    label: "Example 1",
+    icon: <GoogleMaterialIcons iconName="format_paint" />,
+    label: "Theme-switcher",
+  },
+  {
+    icon: <GoogleMaterialIcons iconName="view_list" />,
+    label: "Example",
   },
 ];

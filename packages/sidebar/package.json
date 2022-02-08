@@ -1,6 +1,6 @@
 {
   "name": "@tmnrp/react-sidebar",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React sidebar is a component that can be used to display sidebar.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -9,7 +9,7 @@
   ],
   "author": "TMRNP <harsh.harish1@gmail.com> (https://tmnrp-portfolio.vercel.app/)",
   "license": "MIT",
-  "homepage": "https://tmnrp-react-ui.vercel.app/sidebar",
+  "homepage": "https://tmnrp-react-ui.vercel.app/sidebar-page",
   "readme": "https://github.com/tmnrp/react-ui/tree/master/packages/sidebar#readme",
   "repository": {
     "type": "git",

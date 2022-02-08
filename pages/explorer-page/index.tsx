@@ -9,7 +9,7 @@ import { Explorer } from "@tmnrp/react-explorer";
 
 const ExplorerPage = () => {
   const router = useRouter();
-  const { breadcrumbRef, pbRef } = useContext(GlobalContext);
+  const { breadcrumbRef } = useContext(GlobalContext);
   useBreadcrumbs?.({ ref: breadcrumbRef, crumbs: crumbs });
 
   //

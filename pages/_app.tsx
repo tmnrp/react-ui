@@ -43,6 +43,7 @@ export const getExplorerContent = ({
         label: "Example 1",
         icon: <GoogleMaterialIcons iconName="view_list" />,
         itemProps: {
+          className: "hover:text-primary cursor-pointer",
           onClick: () => router.push(CONST_PAGES.BREADCRUMBS.PATH),
         },
       },
@@ -56,6 +57,7 @@ export const getExplorerContent = ({
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
         itemProps: {
+          className: "hover:text-primary cursor-pointer",
           onClick: () => router.push(CONST_PAGES.GOOGLE_MATERIAL_ICONS.PATH),
         },
       },
@@ -69,45 +71,49 @@ export const getExplorerContent = ({
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
         itemProps: {
+          className: "hover:text-primary cursor-pointer",
           onClick: () => router.push(CONST_PAGES.PROGRESSBAR.PATH),
         },
       },
     ],
   },
   {
-    icon: <GoogleMaterialIcons iconName="smart_button" />,
+    icon: <GoogleMaterialIcons iconName="format_paint" />,
     label: "Theme-switcher",
     items: [
       {
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
         itemProps: {
+          className: "hover:text-primary cursor-pointer",
           onClick: () => router.push(CONST_PAGES.THEME_SWITCHER.PATH),
         },
       },
     ],
   },
   {
-    icon: <GoogleMaterialIcons iconName="smart_button" />,
+    icon: <GoogleMaterialIcons iconName="view_sidebar" />,
     label: "Sidebar",
     items: [
       {
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
         itemProps: {
+          className: "hover:text-primary cursor-pointer",
           onClick: () => router.push(CONST_PAGES.SIDEBAR.PATH),
         },
       },
     ],
   },
   {
-    icon: <GoogleMaterialIcons iconName="smart_button" />,
+    icon: <GoogleMaterialIcons iconName="account_tree" />,
     label: "Explorer",
     items: [
       {
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
         itemProps: {
+          className: "hover:text-primary cursor-pointer",
           onClick: () => router.push(CONST_PAGES.EXPLORER.PATH),
         },
       },

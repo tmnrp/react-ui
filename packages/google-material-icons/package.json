@@ -1,6 +1,6 @@
 {
   "name": "@tmnrp/react-google-material-icons",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -8,7 +8,7 @@
     "dist"
   ],
   "author": "TMRNP <harsh.harish1@gmail.com> (https://tmnrp-portfolio.vercel.app/)",
-  "homepage": "https://tmnrp-react-ui.vercel.app/google-react-icons",
+  "homepage": "https://tmnrp-react-ui.vercel.app/google-material-icons",
   "readme": "https://github.com/tmnrp/react-ui/tree/master/packages/google-material-icons#readme",
   "scripts": {
     "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
