@@ -1,6 +1,6 @@
 {
   "name": "@tmnrp/react-sidebar",
-  "version": "1.0.12",
+  "version": "1.0.15",
   "description": "React sidebar is a component that can be used to display sidebar.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

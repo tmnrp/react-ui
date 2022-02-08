@@ -26,9 +26,13 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         toggle={toggle}
       />
 
-      <section className="flex flex-1 overflow-auto">
+      <section className="flex flex-1 overflow-auto relative">
         <Sidebar
-          className="pt-4 pl-2"
+          className={`
+          bg-gray-900 pt-4 h-full
+            ${isExpanded ? "w-10/12 sm:w-60" : ""}
+            absolute sm:static
+          `}
           isExpandedWidth="250px"
           isExpanded={isExpanded}
         >

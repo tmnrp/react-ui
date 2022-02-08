@@ -13,10 +13,7 @@ export const Sidebar = ({
 }: ISidebar) => {
   return (
     <aside
-      className={`
-        overflow-hidden
-        ${className}
-      `}
+      className={`overflow-hidden ${className}`}
       style={{
         transition: `width ${isExpandedTransitionduration}s ease-in-out`,
         width: isExpanded ? isExpandedWidth : 0,
