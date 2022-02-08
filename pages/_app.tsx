@@ -6,9 +6,9 @@ import { Layout } from "../components/Layout";
 import Head from "next/head";
 import { GlobalContextProvider } from "../contexts/GlobalContext";
 import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
-import { IExplorerItem } from "./explorer-page";
 import { NextRouter } from "next/router";
 import { CONST_PAGES } from "../utils/contants";
+import { IExplorerItem } from "@tmnrp/react-explorer";
 
 //
 const MyApp = ({ Component, pageProps }: AppProps) => {
