@@ -5,9 +5,10 @@ import type { AppProps } from "next/app";
 import { Layout } from "../components/Layout";
 import Head from "next/head";
 import { GlobalContextProvider } from "../contexts/GlobalContext";
-import { CONST_PAGES } from "../utils/contants";
 import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
 import { IExplorerItem } from "./explorer-page";
+import { NextRouter } from "next/router";
+import { CONST_PAGES } from "../utils/contants";
 
 //
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -29,42 +30,33 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 export default MyApp;
 
 //
-export const EXPLORER_CONTENT: Array<IExplorerItem> = [
+export const getExplorerContent = ({
+  router,
+}: {
+  router: NextRouter;
+}): Array<IExplorerItem> => [
   {
     icon: <GoogleMaterialIcons iconName="double_arrow" />,
     label: "Breadcrumbs",
-    itemKey: CONST_PAGES.BREADCRUMBS.KEY,
-
     items: [
       {
         label: "Example 1",
         icon: <GoogleMaterialIcons iconName="view_list" />,
-        itemKey: CONST_PAGES.BREADCRUMBS.KEY,
-      },
-      {
-        label: "Example 2",
-        icon: <GoogleMaterialIcons iconName="view_list" />,
-        itemKey: CONST_PAGES.BREADCRUMBS.KEY,
-      },
-      {
-        label: "Example 3",
-        icon: <GoogleMaterialIcons iconName="view_list" />,
-        itemKey: CONST_PAGES.BREADCRUMBS.KEY,
+        itemProps: {
+          onClick: () => router.push(CONST_PAGES.BREADCRUMBS.PATH),
+        },
       },
     ],
   },
   {
     icon: <GoogleMaterialIcons iconName="interests" />,
     label: "Google material icons",
-    itemKey: CONST_PAGES.GOOGLE_MATERIAL_ICONS.KEY,
-
     items: [
       {
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
-        itemKey: CONST_PAGES.GOOGLE_MATERIAL_ICONS.KEY,
-        onClick: () => {
-          alert("lolwa");
+        itemProps: {
+          onClick: () => router.push(CONST_PAGES.GOOGLE_MATERIAL_ICONS.PATH),
         },
       },
     ],
@@ -72,39 +64,52 @@ export const EXPLORER_CONTENT: Array<IExplorerItem> = [
   {
     icon: <GoogleMaterialIcons iconName="sync" />,
     label: "Progressbar",
-    itemKey: CONST_PAGES.PROGRESSBAR.KEY,
-
     items: [
       {
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
-        itemKey: CONST_PAGES.PROGRESSBAR.KEY,
+        itemProps: {
+          onClick: () => router.push(CONST_PAGES.PROGRESSBAR.PATH),
+        },
       },
     ],
   },
   {
     icon: <GoogleMaterialIcons iconName="smart_button" />,
     label: "Theme-switcher",
-    itemKey: CONST_PAGES.BUTTONS.KEY,
-
     items: [
       {
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
-        itemKey: CONST_PAGES.BUTTONS.KEY,
+        itemProps: {
+          onClick: () => router.push(CONST_PAGES.THEME_SWITCHER.PATH),
+        },
       },
     ],
   },
   {
     icon: <GoogleMaterialIcons iconName="smart_button" />,
     label: "Sidebar",
-    itemKey: CONST_PAGES.SIDEBAR.KEY,
-
     items: [
       {
         label: "Examples",
         icon: <GoogleMaterialIcons iconName="view_list" />,
-        itemKey: CONST_PAGES.SIDEBAR.KEY,
+        itemProps: {
+          onClick: () => router.push(CONST_PAGES.SIDEBAR.PATH),
+        },
+      },
+    ],
+  },
+  {
+    icon: <GoogleMaterialIcons iconName="smart_button" />,
+    label: "Explorer",
+    items: [
+      {
+        label: "Examples",
+        icon: <GoogleMaterialIcons iconName="view_list" />,
+        itemProps: {
+          onClick: () => router.push(CONST_PAGES.EXPLORER.PATH),
+        },
       },
     ],
   },

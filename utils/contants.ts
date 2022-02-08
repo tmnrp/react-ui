@@ -34,13 +34,17 @@ export const CONST_PAGES = {
     KEY: "/progressbar",
     PATH: "/progressbar",
   },
-  BUTTONS: {
+  THEME_SWITCHER: {
     KEY: "/theme-switcher",
     PATH: "/theme-switcher",
   },
   SIDEBAR: {
     KEY: "/sidebar-page",
     PATH: "/sidebar-page",
+  },
+  EXPLORER: {
+    KEY: "/explorer-page",
+    PATH: "/explorer-page",
   },
   // PERSONS: {
   //   KEY: "persons",

@@ -3,10 +3,13 @@ import { CONST_PAGES, CONST_CONFIG } from "../utils/contants";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
 import { useSidebar, SidebarToggler, Sidebar } from "@tmnrp/react-sidebar";
+import { getExplorerContent } from "../pages/_app";
+import { Explorer } from "@tmnrp/react-explorer";
 
 //
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isExpanded, toggle } = useSidebar();
+  const router = useRouter();
 
   //
   return (
@@ -24,7 +27,14 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       />
 
       <section className="flex flex-1 overflow-auto">
-        <Sidebar isExpanded={isExpanded}>My sidebar</Sidebar>
+        <Sidebar
+          className="pt-4 pl-2"
+          isExpandedWidth="250px"
+          isExpanded={isExpanded}
+        >
+          <Explorer items={getExplorerContent({ router })} />
+        </Sidebar>
+
         <main className="flex-1 overflow-hidden">{children}</main>
       </section>
 

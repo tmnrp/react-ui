@@ -50,3 +50,6 @@ packages/theme-switcher/dist
 
 packages/sidebar/node_modules
 packages/sidebar/dist
+
+packages/explorer/node_modules
+packages/explorer/dist

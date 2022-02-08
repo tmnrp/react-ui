@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@tmnrp/react-breadcrumbs": "^1.0.26",
+    "@tmnrp/react-explorer": "^1.0.1",
     "@tmnrp/react-google-material-icons": "^1.0.10",
     "@tmnrp/react-progressbar": "^1.0.23",
     "@tmnrp/react-sidebar": "^1.0.7",

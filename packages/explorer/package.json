@@ -1,7 +1,7 @@
 {
-  "name": "@tmnrp/react-sidebar",
-  "version": "1.0.7",
-  "description": "React sidebar is a component that can be used to display sidebar.",
+  "name": "@tmnrp/react-explorer",
+  "version": "1.0.1",
+  "description": "React explorer is a component that can be used to display explorer.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -9,12 +9,12 @@
   ],
   "author": "TMRNP <harsh.harish1@gmail.com> (https://tmnrp-portfolio.vercel.app/)",
   "license": "MIT",
-  "homepage": "https://tmnrp-react-ui.vercel.app/sidebar",
-  "readme": "https://github.com/tmnrp/react-ui/tree/master/packages/sidebar#readme",
+  "homepage": "https://tmnrp-react-ui.vercel.app/explorer-page",
+  "readme": "https://github.com/tmnrp/react-ui/tree/master/packages/explorer#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/tmnrp/react-ui.git",
-    "directory": "packages/sidebar"
+    "directory": "packages/explorer"
   },
   "scripts": {
     "build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
@@ -43,8 +43,11 @@
     "react-component",
     "components",
     "ui",
-    "sidebar",
+    "explorer",
     "aside",
-    "side bar"
+    "side bar",
+    "file explorer",
+    "menu",
+    "menu items"
   ]
 }
