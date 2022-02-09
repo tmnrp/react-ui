@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { CONST_CONFIG, CONST_THEME_MODES } from "../utils/contants";
 import { IBreadcrumbsMethods } from "@tmnrp/react-breadcrumbs";
 import { IProgressbarMethods } from "@tmnrp/react-progressbar";
+import { useSidebar } from "@tmnrp/react-sidebar";
 
 //
 export interface GlobalContextProps {
@@ -10,6 +11,8 @@ export interface GlobalContextProps {
   themeMode: string;
   setThemeMode: React.Dispatch<React.SetStateAction<string>>;
   toggleThemeMode: () => void;
+  isExpanded: boolean;
+  toggle: () => void;
 }
 
 //
@@ -17,6 +20,8 @@ export const GlobalContext = React.createContext<GlobalContextProps>({
   themeMode: CONST_CONFIG.THEME,
   setThemeMode: () => {},
   toggleThemeMode: () => {},
+  isExpanded: false,
+  toggle: () => {},
 });
 
 //
@@ -47,14 +52,24 @@ export const GlobalContextProvider = ({ children }: Props) => {
   const pbRef = useRef<IProgressbarMethods>(null);
 
   //
+  const { isExpanded, toggle } = useSidebar({ defaultIsExpanded: true });
+
+  //
   return (
     <GlobalContext.Provider
       value={{
-        pbRef: pbRef,
-        breadcrumbRef: breadcrumbRef,
-        themeMode: themeMode,
-        setThemeMode: setThemeMode,
-        toggleThemeMode: toggleThemeMode,
+        //
+        pbRef,
+        breadcrumbRef,
+
+        //
+        themeMode,
+        setThemeMode,
+        toggleThemeMode,
+
+        //
+        isExpanded,
+        toggle,
       }}
     >
       {children}

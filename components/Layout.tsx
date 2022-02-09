@@ -2,14 +2,17 @@ import { useRouter } from "next/router";
 import { CONST_PAGES, CONST_CONFIG } from "../utils/contants";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
-import { useSidebar, SidebarToggler, Sidebar } from "@tmnrp/react-sidebar";
+import { SidebarToggler, Sidebar } from "@tmnrp/react-sidebar";
 import { getExplorerContent } from "../pages/_app";
+import { useContext } from "react";
+import { GlobalContext } from "../contexts/GlobalContext";
 import { Explorer } from "@tmnrp/react-explorer";
+//import { Explorer } from "../packages/explorer/src";
 
 //
 export const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { isExpanded, toggle } = useSidebar();
   const router = useRouter();
+  const { isExpanded, toggle } = useContext(GlobalContext);
 
   //
   return (
@@ -36,7 +39,10 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           isExpandedWidth="250px"
           isExpanded={isExpanded}
         >
-          <Explorer items={getExplorerContent({ router })} />
+          <Explorer
+            items={getExplorerContent({ router })}
+            afterOnClick={({ e, props }) => toggle()}
+          />
         </Sidebar>
 
         <main className="flex-1 overflow-hidden">{children}</main>

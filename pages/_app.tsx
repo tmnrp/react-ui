@@ -9,6 +9,7 @@ import { GoogleMaterialIcons } from "@tmnrp/react-google-material-icons";
 import { NextRouter } from "next/router";
 import { CONST_PAGES } from "../utils/contants";
 import { IExplorerItem } from "@tmnrp/react-explorer";
+//import { IExplorerItem } from "../packages/explorer/src";
 
 //
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -38,9 +39,10 @@ export const getExplorerContent = ({
   {
     icon: <GoogleMaterialIcons iconName="double_arrow" />,
     label: "Breadcrumbs",
+    clickable: false,
     items: [
       {
-        label: "Example 1",
+        label: "Example",
         icon: <GoogleMaterialIcons iconName="view_list" />,
         itemProps: {
           className: "hover:text-primary cursor-pointer",
@@ -52,6 +54,7 @@ export const getExplorerContent = ({
   {
     icon: <GoogleMaterialIcons iconName="interests" />,
     label: "Google material icons",
+    clickable: false,
     items: [
       {
         label: "Examples",
@@ -66,6 +69,7 @@ export const getExplorerContent = ({
   {
     icon: <GoogleMaterialIcons iconName="sync" />,
     label: "Progressbar",
+    clickable: false,
     items: [
       {
         label: "Examples",
@@ -80,6 +84,7 @@ export const getExplorerContent = ({
   {
     icon: <GoogleMaterialIcons iconName="format_paint" />,
     label: "Theme-switcher",
+    clickable: false,
     items: [
       {
         label: "Examples",
@@ -94,6 +99,7 @@ export const getExplorerContent = ({
   {
     icon: <GoogleMaterialIcons iconName="view_sidebar" />,
     label: "Sidebar",
+    clickable: false,
     items: [
       {
         label: "Examples",
@@ -108,6 +114,7 @@ export const getExplorerContent = ({
   {
     icon: <GoogleMaterialIcons iconName="account_tree" />,
     label: "Explorer",
+    clickable: false,
     items: [
       {
         label: "Examples",
