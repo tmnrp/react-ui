@@ -4,7 +4,6 @@ import { DetailedHTMLProps, HTMLAttributes, useState } from "react";
 //
 export const Sidebar = ({
   children,
-  className = "",
   style = {},
   isExpanded,
   isExpandedWidth = 200,
@@ -13,8 +12,8 @@ export const Sidebar = ({
 }: ISidebar) => {
   return (
     <aside
-      className={`overflow-hidden ${className}`}
       style={{
+        overflow: "hidden",
         transition: `width ${isExpandedTransitionduration}s ease-in-out`,
         width: isExpanded ? isExpandedWidth : 0,
         ...style,
@@ -37,7 +36,7 @@ export interface ISidebar
 
 //
 export const SidebarToggler = ({
-  className = "",
+  style = {},
   isExpanded,
   toggle,
   isExpandedIcon,
@@ -46,7 +45,13 @@ export const SidebarToggler = ({
 }: ISidebarToggler) => {
   return (
     <aside
-      className={`cursor-pointer inline-flex justify-center items-center ${className}`}
+      style={{
+        cursor: "pointer",
+        display: "inline-flex",
+        justifyContent: "center",
+        alignItems: "center",
+        ...style,
+      }}
       onClick={toggle}
       {...props}
     >

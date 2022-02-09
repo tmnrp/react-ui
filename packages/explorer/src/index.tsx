@@ -1,26 +1,45 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from "react";
 
 //
-export const Explorer = ({ items = [], ...props }: IExplorer) => {
+export const Explorer = ({ items = [], style = {}, ...props }: IExplorer) => {
   return (
-    <ul className="pb-2" {...props}>
+    <ul
+      style={{
+        paddingBottom: "0.5rem",
+        ...style,
+      }}
+      {...props}
+    >
       {items.map(
-        (
-          { icon, label, items, className = "", itemProps = {}, ...rest },
-          i
-        ) => {
-          const { className: itemPropsClassName, ...itemPropsRest } = itemProps;
+        ({ icon, label, items, style = {}, itemProps = {}, ...rest }, i) => {
+          const { style: itemPropsStyle, ...itemPropsRest } = itemProps;
           return (
-            <li key={i} className={`pl-2 ${className}`} {...rest}>
+            <li
+              key={i}
+              style={{
+                paddingLeft: "0.5rem",
+                ...style,
+              }}
+              {...rest}
+            >
               <div
-                className={`
-                  flex space-x-2 whitespace-nowrap
-                  ${itemPropsClassName}
-                `}
+                style={{
+                  display: "flex",
+                  whiteSpace: "nowrap",
+                  ...itemPropsStyle,
+                }}
                 {...itemPropsRest}
               >
-                {icon && <div className="flex items-center">{icon}</div>}
-                {label && <div className="flex items-center">{label}</div>}
+                {icon && (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    {icon}
+                  </div>
+                )}
+                {label && (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    {label}
+                  </div>
+                )}
               </div>
 
               {items && <Explorer items={items} />}

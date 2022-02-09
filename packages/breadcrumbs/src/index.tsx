@@ -30,20 +30,26 @@ export const Breadcrumbs = forwardRef<IBreadcrumbsMethods, IBreadcrumbs>(
         style={{ display: "flex", ...style }}
         {...props}
       >
-        {crumbs?.map(({ className = "", icon, label, ...props }, i) => {
-          return (
-            <div
-              key={i}
-              className={`crumb flex ${crumbsPropsClassName} ${className}`}
-              {...crumbsPropsRest}
-              {...props}
-            >
-              <Seperator {...seperatorProps}>{seperator}</Seperator>
-              {icon && <Icon {...iconProps}>{icon}</Icon>}
-              {label && <Label {...labelProps}>{label}</Label>}
-            </div>
-          );
-        })}
+        {crumbs?.map(
+          ({ className = "", icon, label, style = {}, ...props }, i) => {
+            return (
+              <div
+                key={i}
+                className={`crumb ${crumbsPropsClassName} ${className}`}
+                style={{
+                  display: "flex",
+                  ...style,
+                }}
+                {...crumbsPropsRest}
+                {...props}
+              >
+                <Seperator {...seperatorProps}>{seperator}</Seperator>
+                {icon && <Icon {...iconProps}>{icon}</Icon>}
+                {label && <Label {...labelProps}>{label}</Label>}
+              </div>
+            );
+          }
+        )}
       </div>
     );
   }
@@ -55,9 +61,15 @@ interface ISeperator
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {}
-const Seperator = ({ children, className = "", ...props }: ISeperator) => {
+const Seperator = ({ children, style = {}, ...props }: ISeperator) => {
   return (
-    <div className={`flex items-center ${className}`} {...props}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+      }}
+      {...props}
+    >
       {children}
     </div>
   );
@@ -69,8 +81,14 @@ interface IIcon
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {}
-const Icon = ({ children, className = "", ...props }: IIcon) => (
-  <div className={`flex items-center ${className}`} {...props}>
+const Icon = ({ children, style = {}, ...props }: IIcon) => (
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+    }}
+    {...props}
+  >
     {children}
   </div>
 );
@@ -81,8 +99,14 @@ interface ILabel
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {}
-const Label = ({ children, className = "", ...props }: ILabel) => (
-  <div className={`flex items-center ${className}`} {...props}>
+const Label = ({ children, style = {}, ...props }: ILabel) => (
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+    }}
+    {...props}
+  >
     {children}
   </div>
 );
