@@ -6,8 +6,9 @@ import { SidebarToggler, Sidebar } from "@tmnrp/react-sidebar";
 import { getExplorerContent } from "../pages/_app";
 import { useContext } from "react";
 import { GlobalContext } from "../contexts/GlobalContext";
-import { Explorer } from "@tmnrp/react-explorer";
-//import { Explorer } from "../packages/explorer/src";
+//import { Explorer } from "@tmnrp/react-explorer";
+import { Explorer } from "../packages/explorer/src";
+import Link from "next/link";
 
 //
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -40,8 +41,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           isExpanded={isExpanded}
         >
           <Explorer
-            items={getExplorerContent({ router })}
-            afterOnClick={({ e, props }) => toggle()}
+            className="flex flex-col space-y-4"
+            items={getExplorerContent()}
+            wrapperHOC={({ cmp, url }) =>
+              url ? <Link href={url}>{cmp}</Link> : cmp
+            }
           />
         </Sidebar>
 
