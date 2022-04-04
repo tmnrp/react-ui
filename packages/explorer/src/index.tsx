@@ -1,13 +1,18 @@
 import React from "react";
 
 //
-export const Explorer = ({ items = [], wrapperHOC, ...props }: IExplorer) => {
+export const Explorer = ({
+  items = [],
+  wrapperHOC,
+  commonItemProps = {},
+  ...props
+}: IExplorer) => {
   //
   return (
     <ul {...props}>
-      {items.map(({ icon, label, url, ...itemRest }, index) => {
-        const item = (
-          <a {...itemRest.props} {...(url && { href: url })}>
+      {items.map(({ icon, label, url, ...item }, index) => {
+        const cmp = (
+          <a {...commonItemProps} {...item.props} {...(url && { href: url })}>
             {icon && (
               <div style={{ display: "flex", alignItems: "center" }}>
                 {icon}
@@ -24,13 +29,14 @@ export const Explorer = ({ items = [], wrapperHOC, ...props }: IExplorer) => {
         return (
           <li key={index}>
             {wrapperHOC
-              ? wrapperHOC({ cmp: item, icon, label, url, ...itemRest })
-              : item}
+              ? wrapperHOC({ cmp: cmp, icon, label, url, ...item })
+              : cmp}
 
-            {itemRest.items && (
+            {item.items && (
               <Explorer
-                items={itemRest.items}
+                items={item.items}
                 wrapperHOC={wrapperHOC}
+                commonItemProps={commonItemProps}
                 {...props}
               />
             )}
@@ -49,6 +55,10 @@ export interface IExplorer
   > {
   items?: Array<IExplorerItem>;
   wrapperHOC?: ({}: IWrapperHOC) => any;
+  commonItemProps?: React.DetailedHTMLProps<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  >;
 }
 
 //

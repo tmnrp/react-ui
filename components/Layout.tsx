@@ -41,11 +41,14 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           isExpanded={isExpanded}
         >
           <Explorer
-            className="flex flex-col space-y-4"
+            className="flex flex-col space-y-4 pl-4"
             items={getExplorerContent()}
             wrapperHOC={({ cmp, url }) =>
               url ? <Link href={url}>{cmp}</Link> : cmp
             }
+            commonItemProps={{
+              className: "flex space-x-2 mb-1 hover:text-primary",
+            }}
           />
         </Sidebar>
 
